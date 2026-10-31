@@ -625,6 +625,11 @@
             min-height: 160px;
         }
         .code-line { display: block; }
+
+        /* Dashboard screenshot inside a window frame (project slides 02/03) */
+        .shot-link { display: block; line-height: 0; }
+        .shot-link img { width: 100%; height: auto; display: block; transition: transform 0.4s, opacity 0.3s; }
+        .shot-link:hover img { transform: scale(1.02); opacity: 0.92; }
         .t-kw  { color: #ff79c6; }
         .t-fn  { color: #50fa7b; }
         .t-str { color: #f1fa8c; }
@@ -1332,27 +1337,121 @@
     </div>
 </section>
 
-<!-- ===== SLIDE 05 — VIZ SHOWCASE ===== -->
-<section class="slide" id="slide-viz" data-index="4">
+<!-- ===== SLIDE 05 — PROJECT 2 ===== -->
+<section class="slide" id="slide-proj2" data-index="4">
     <div class="slide-content">
-        <p class="section-label reveal d1">[ 05 — Visualizações ]</p>
-        <h2 class="about-h2 reveal d2" style="margin-bottom: clamp(0.3rem,0.8vw,0.6rem)">Dados ganham vida com a visualização certa</h2>
-        <div class="viz-cards" style="grid-template-columns: 1fr; max-width: 480px;">
-            <div class="viz-card reveal-scale d3">
-                <div class="viz-tool-badge">Python</div>
-                <div class="viz-icon">◉</div>
-                <div class="viz-card-title">HR Attrition — Análise Exploratória</div>
-                <div class="viz-card-desc">Diagnóstico de attrition em 4.410 colaboradores com identificação de perfis de risco combinados — análise uni, bi e multivariada com entrega de relatório executivo.</div>
-                <a class="viz-link" href="https://github.com/lorennapaiss/employee-attrition" target="_blank" rel="noopener">Ver projeto →</a>
+        <div class="project-layout reversed">
+            <div class="project-text">
+                <p class="project-tag reveal d1">Project — 02</p>
+                <h2 class="project-title reveal d2">HR Attrition — Modelo Preditivo &amp; Dashboard</h2>
+                <p class="project-desc reveal d3">Continuação do diagnóstico: modelo XGBoost regularizado com explicabilidade SHAP que pontua o risco de saída de 3.699 colaboradores ativos. O resultado vira um dashboard operacional para HR Business Partners, com ranking de risco, filtros e uma lista de conversas preventivas por departamento.</p>
+                <div class="project-stack reveal d4">
+                    <span class="pill">Python</span>
+                    <span class="pill">XGBoost</span>
+                    <span class="pill">SHAP</span>
+                    <span class="pill">Chart.js</span>
+                </div>
+                <div class="project-metric reveal d5">
+                    <span class="metric-number" data-target="90" data-decimal="0" data-suffix="%">0%</span>
+                    <span class="metric-label">de recall com threshold t = 0.35</span>
+                </div>
+                <div class="project-btns reveal d6">
+                    <a class="btn-outline" href="/attrition-model/">Ver dashboard →</a>
+                    <a class="btn-github" href="https://github.com/lorennapaiss/employee-attrition-model" target="_blank" rel="noopener">GitHub →</a>
+                </div>
+            </div>
+            <div class="project-visual reveal-left d3">
+                <div class="terminal-window">
+                    <div class="terminal-chrome">
+                        <div class="t-dot red"></div>
+                        <div class="t-dot yellow"></div>
+                        <div class="t-dot green"></div>
+                        <span class="terminal-filename">bp_attrition_dashboard.html</span>
+                    </div>
+                    <a class="shot-link" href="/attrition-model/" aria-label="Abrir o dashboard de attrition">
+                        <img src="/assets/attrition-model.jpg" alt="Dashboard de risco de attrition: KPIs, risco por tempo de casa e ranking de colaboradores" loading="lazy" width="960" height="720">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SLIDE 06 — GITHUB ===== -->
-<section class="slide" id="slide-github" data-index="5">
+<!-- ===== SLIDE 06 — PROJECT 3 ===== -->
+<section class="slide" id="slide-proj3" data-index="5">
     <div class="slide-content">
-        <p class="section-label reveal d1">[ 06 — Open Source ]</p>
+        <div class="project-layout">
+            <div class="project-text">
+                <p class="project-tag reveal d1">Project — 03</p>
+                <h2 class="project-title reveal d2">IMDb Top 1000 — Análise &amp; Dashboard Interativo</h2>
+                <p class="project-desc reveal d3">EDA dos 1.000 filmes mais bem avaliados do IMDb: o que se associa à nota — popularidade, crítica, duração, bilheteria, gênero e década. Os resultados viram um dashboard interativo com pôsteres, filtros por gênero e década e correlações calculadas ao vivo.</p>
+                <div class="project-stack reveal d4">
+                    <span class="pill">Python</span>
+                    <span class="pill">Pandas</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">Chart.js</span>
+                </div>
+                <div class="project-metric reveal d5">
+                    <span class="metric-number" data-target="0.49" data-decimal="2" data-suffix="">0</span>
+                    <span class="metric-label">correlação votos × nota — o sinal mais forte</span>
+                </div>
+                <div class="project-btns reveal d6">
+                    <a class="btn-outline" href="/imdb/">Ver dashboard →</a>
+                    <a class="btn-github" href="https://github.com/lorennapaiss/imdb-analysis" target="_blank" rel="noopener">GitHub →</a>
+                </div>
+            </div>
+            <div class="project-visual reveal-right d3">
+                <div class="terminal-window">
+                    <div class="terminal-chrome">
+                        <div class="t-dot red"></div>
+                        <div class="t-dot yellow"></div>
+                        <div class="t-dot green"></div>
+                        <span class="terminal-filename">imdb_dashboard.html</span>
+                    </div>
+                    <a class="shot-link" href="/imdb/" aria-label="Abrir o dashboard do IMDb">
+                        <img src="/assets/imdb.jpg" alt="Dashboard do IMDb Top 1000: destaque, pôsteres e gráficos por década e crítica" loading="lazy" width="960" height="667">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SLIDE 07 — VIZ SHOWCASE ===== -->
+<section class="slide" id="slide-viz" data-index="6">
+    <div class="slide-content">
+        <p class="section-label reveal d1">[ 07 — Visualizações ]</p>
+        <h2 class="about-h2 reveal d2" style="margin-bottom: clamp(0.3rem,0.8vw,0.6rem)">Dados ganham vida com a visualização certa</h2>
+        <div class="viz-cards">
+            <div class="viz-card reveal-scale d3">
+                <div class="viz-tool-badge">Python</div>
+                <div class="viz-icon">◉</div>
+                <div class="viz-card-title">HR Attrition — Análise Exploratória</div>
+                <div class="viz-card-desc">Diagnóstico de attrition em 4.410 colaboradores com identificação de perfis de risco combinados — análise uni, bi e multivariada com entrega de relatório executivo.</div>
+                <a class="viz-link" href="/attrition/">Ver análise →</a>
+            </div>
+            <div class="viz-card reveal-scale d4">
+                <div class="viz-tool-badge">Dashboard</div>
+                <div class="viz-icon">◈</div>
+                <div class="viz-card-title">HR Attrition — Painel de Risco</div>
+                <div class="viz-card-desc">Dashboard operacional para HR BPs: risco por tempo de casa e departamento, ranking filtrável e cards de conversas preventivas.</div>
+                <a class="viz-link" href="/attrition-model/">Abrir dashboard →</a>
+            </div>
+            <div class="viz-card reveal-scale d5">
+                <div class="viz-tool-badge">Dashboard</div>
+                <div class="viz-icon">★</div>
+                <div class="viz-card-title">IMDb Top 1000</div>
+                <div class="viz-card-desc">Dashboard interativo com pôsteres, filtros por gênero e década, crítica vs. público e correlações ao vivo — tema claro e escuro.</div>
+                <a class="viz-link" href="/imdb/">Abrir dashboard →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SLIDE 08 — GITHUB ===== -->
+<section class="slide" id="slide-github" data-index="7">
+    <div class="slide-content">
+        <p class="section-label reveal d1">[ 08 — Open Source ]</p>
         <div class="github-layout">
             <div class="gh-profile reveal-left d2">
 <img src="https://github.com/lorennapaiss.png" alt="Lorenna Pais GitHub Avatar" class="gh-avatar" onerror="this.style.display='none'">
@@ -1389,10 +1488,10 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=lorennapaiss
     </div>
 </section>
 
-<!-- ===== SLIDE 07 — EXPERIENCE ===== -->
-<section class="slide" id="slide-experience" data-index="6">
+<!-- ===== SLIDE 09 — EXPERIENCE ===== -->
+<section class="slide" id="slide-experience" data-index="8">
     <div class="slide-content">
-        <p class="section-label reveal d1">[ 07 — Trajetória ]</p>
+        <p class="section-label reveal d1">[ 09 — Trajetória ]</p>
         <div class="timeline-layout">
             <div class="timeline-col reveal-left d2">
                 <div class="timeline-col-label">Experiência</div>
@@ -1455,10 +1554,10 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=lorennapaiss
     </div>
 </section>
 
-<!-- ===== SLIDE 08 — VALUE PROP ===== -->
-<section class="slide" id="slide-value" data-index="7">
+<!-- ===== SLIDE 10 — VALUE PROP ===== -->
+<section class="slide" id="slide-value" data-index="9">
     <div class="slide-content">
-        <p class="section-label reveal d1">[ 08 — O que trago ]</p>
+        <p class="section-label reveal d1">[ 10 — O que trago ]</p>
         <div class="value-grid">
             <div class="value-card reveal-scale d2">
                 <div class="value-icon">◈</div>
@@ -1484,8 +1583,8 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=lorennapaiss
     </div>
 </section>
 
-<!-- ===== SLIDE 09 — CONTACT ===== -->
-<section class="slide" id="slide-contact" data-index="8">
+<!-- ===== SLIDE 11 — CONTACT ===== -->
+<section class="slide" id="slide-contact" data-index="10">
     <div class="contact-bg"></div>
     <div class="contact-content">
         <h2 class="contact-headline reveal d1">
@@ -1543,9 +1642,11 @@ class SlidePresentation {
                     this.updateProgress(idx);
                     this.updateNavDots(idx);
                     // Trigger slide-specific effects
-                    if (idx === 1) triggerCounters();
-                    if (idx === 3) typewriterReveal();
-                    if (idx === 6) initGitHub();
+                    // Trigger by id so effects survive adding/reordering slides
+                    const id = entry.target.id;
+                    if (id === 'slide-about') triggerCounters();
+                    if (id === 'slide-proj1') typewriterReveal();
+                    if (id === 'slide-github') initGitHub();
                 }
             });
         }, opts);
@@ -1704,12 +1805,13 @@ function typewriterReveal() {
         setTimeout(() => {
             const span = document.createElement('span');
             span.className = 'code-line ' + (line.cls || '');
-            // Simple syntax color
-            let html = line.text
-                .replace(/(import|from|as|def|return|class)/g, '<span class="t-kw">$1</span>')
-                .replace(/(#.*)/g, '<span class="t-cm">$1</span>')
-                .replace(/(".*?")/g, '<span class="t-str">$1</span>')
-                .replace(/\b(pd|df|X|y|model)\b/g, '<span class="t-cls">$1</span>');
+            // Simple syntax color: tokenize in one pass so later rules never match inside spans added by earlier ones
+            const TOKEN = /(#.*$)|("[^"]*")|\b(import|from|as|def|return|class)\b|\b(pd|df|X|y|model)\b/g;
+            let html = line.text.replace(TOKEN, (m, cm, str, kw, cls) =>
+                cm  ? `<span class="t-cm">${m}</span>`  :
+                str ? `<span class="t-str">${m}</span>` :
+                kw  ? `<span class="t-kw">${m}</span>`  :
+                      `<span class="t-cls">${m}</span>`);
             span.innerHTML = html || '&nbsp;';
             container.appendChild(span);
         }, i * 130);
@@ -1901,7 +2003,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (e.isIntersecting) triggerCounters();
         });
     }, { threshold: 0.5 });
-    document.querySelectorAll('#slide-proj1').forEach(s => projObserver.observe(s));
+    document.querySelectorAll('[id^="slide-proj"]').forEach(s => projObserver.observe(s));
 
     // Start everything
     new SlidePresentation();
