@@ -1841,7 +1841,9 @@ async function initGitHub() {
         // Repos
         const list = document.getElementById('repoCardsList');
         list.innerHTML = '';
-        const filtered = Array.isArray(repos) ? repos.filter(r => !r.fork).slice(0, 6) : [];
+        // Hide forks and the two "infrastructure" repos: the profile README (<user>/<user>) and this site (<user>.github.io)
+        const isMeta = r => r.name.toLowerCase() === username.toLowerCase() || r.name.toLowerCase() === `${username}.github.io`.toLowerCase();
+        const filtered = Array.isArray(repos) ? repos.filter(r => !r.fork && !isMeta(r)).slice(0, 6) : [];
         if (filtered.length === 0) throw new Error('No repos');
         filtered.forEach((repo, i) => {
             const desc = repo.description ? (repo.description.length > 80 ? repo.description.slice(0, 77) + '…' : repo.description) : 'Sem descrição';
